@@ -1,0 +1,18 @@
+.answer-button {
+    -fx-background-radius: 8;
+    -fx-padding: 10 14;
+}
+
+.answer-correct {
+    -fx-background-color: #2ecc71;
+    -fx-text-fill: white;
+}
+
+.answer-wrong {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+}
+
+.answer-disabled {
+    -fx-opacity: 0.65;
+}

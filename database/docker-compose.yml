@@ -1,0 +1,27 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: millionaire_postgres
+    environment:
+      POSTGRES_DB: millionaire_quiz
+      POSTGRES_USER: millionaire
+      POSTGRES_PASSWORD: millionaire
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+      - ./postgres/data.sql:/docker-entrypoint-initdb.d/02-data.sql:ro
+
+  mysql:
+    image: mysql:9
+    container_name: millionaire_mysql
+    environment:
+      MYSQL_DATABASE: millionaire_quiz
+      MYSQL_USER: millionaire
+      MYSQL_PASSWORD: millionaire
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+      - ./mysql/data.sql:/docker-entrypoint-initdb.d/02-data.sql:ro
