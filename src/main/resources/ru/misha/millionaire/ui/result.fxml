@@ -3,17 +3,22 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="TOP_CENTER" spacing="14.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.misha.millionaire.ui.ResultController">
+<StackPane styleClass="app-background" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.misha.millionaire.ui.ResultController">
     <children>
-        <Label text="Result" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
-        <Label fx:id="resultLabel" wrapText="true" maxWidth="720" />
-        <Label text="TOP-10" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
-        <VBox fx:id="scoresBox" spacing="4" />
-        <Button text="Play again" onAction="#onPlayAgain" />
+        <VBox alignment="TOP_CENTER" spacing="14.0" maxWidth="620" styleClass="start-panel">
+            <children>
+                <Label text="Result" styleClass="title-label" />
+                <Label fx:id="resultLabel" wrapText="true" maxWidth="560" styleClass="subtitle-label" />
+                <Label text="TOP-10" styleClass="question-label" />
+                <VBox fx:id="scoresBox" spacing="6" maxWidth="560" />
+                <Button text="Play again" onAction="#onPlayAgain" styleClass="primary-button" />
+            </children>
+        </VBox>
     </children>
     <padding>
         <Insets bottom="20" left="20" right="20" top="20" />
     </padding>
-</VBox>
+</StackPane>

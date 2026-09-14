@@ -70,8 +70,12 @@ public class StartController {
     }
 
     @FXML
-    private void onCreateSample() {
-        showInfo("Test questions are now loaded with SQL scripts from the database folder.");
+    private void onLeaderboard() {
+        try {
+            App.setRoot("leaderboard");
+        } catch (IOException e) {
+            showError("I/O error: " + e.getMessage());
+        }
     }
 
     private void openProjectFolder(String folderName) {
@@ -95,11 +99,4 @@ public class StartController {
         alert.showAndWait();
     }
 
-    private void showInfo(String message) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Done");
-        alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.showAndWait();
-    }
 }

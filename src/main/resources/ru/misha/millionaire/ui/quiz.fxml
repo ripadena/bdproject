@@ -4,31 +4,36 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="TOP_CENTER" spacing="14.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.misha.millionaire.ui.QuizController">
+<StackPane styleClass="app-background" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.misha.millionaire.ui.QuizController">
     <children>
-        <Label fx:id="roundLabel" text="Round 1/10" />
-        <Label fx:id="moneyLabel" text="Current money: 0" />
-        <Label fx:id="questionLabel" wrapText="true" maxWidth="720" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
-        <VBox spacing="8" maxWidth="720">
+        <VBox alignment="TOP_CENTER" spacing="14.0" maxWidth="760" styleClass="game-panel">
             <children>
-                <Button fx:id="answerA" text="A" onAction="#onAnswerA" maxWidth="720" styleClass="answer-button" />
-                <Button fx:id="answerB" text="B" onAction="#onAnswerB" maxWidth="720" styleClass="answer-button" />
-                <Button fx:id="answerC" text="C" onAction="#onAnswerC" maxWidth="720" styleClass="answer-button" />
-                <Button fx:id="answerD" text="D" onAction="#onAnswerD" maxWidth="720" styleClass="answer-button" />
+                <Label fx:id="roundLabel" text="Round 1/10" styleClass="subtitle-label" />
+                <Label fx:id="moneyLabel" text="Current money: 0" styleClass="subtitle-label" />
+                <Label fx:id="questionLabel" wrapText="true" maxWidth="720" styleClass="question-label" />
+                <VBox spacing="8" maxWidth="720">
+                    <children>
+                        <Button fx:id="answerA" text="A" onAction="#onAnswerA" maxWidth="720" styleClass="answer-button" />
+                        <Button fx:id="answerB" text="B" onAction="#onAnswerB" maxWidth="720" styleClass="answer-button" />
+                        <Button fx:id="answerC" text="C" onAction="#onAnswerC" maxWidth="720" styleClass="answer-button" />
+                        <Button fx:id="answerD" text="D" onAction="#onAnswerD" maxWidth="720" styleClass="answer-button" />
+                    </children>
+                </VBox>
+                <HBox alignment="CENTER" spacing="10">
+                    <children>
+                        <Button fx:id="fiftyButton" text="50/50" onAction="#onFiftyFifty" styleClass="secondary-button" />
+                        <Button fx:id="audienceButton" text="Audience" onAction="#onAudience" styleClass="secondary-button" />
+                        <Button fx:id="friendButton" text="Friend" onAction="#onFriend" styleClass="secondary-button" />
+                        <Button fx:id="takeButton" text="Take money" onAction="#onTakeMoney" styleClass="primary-button" />
+                    </children>
+                </HBox>
             </children>
         </VBox>
-        <HBox spacing="10">
-            <children>
-                <Button fx:id="fiftyButton" text="50/50" onAction="#onFiftyFifty" />
-                <Button fx:id="audienceButton" text="Audience" onAction="#onAudience" />
-                <Button fx:id="friendButton" text="Friend" onAction="#onFriend" />
-                <Button fx:id="takeButton" text="Take money" onAction="#onTakeMoney" />
-            </children>
-        </HBox>
     </children>
     <padding>
         <Insets bottom="20" left="20" right="20" top="20" />
     </padding>
-</VBox>
+</StackPane>
